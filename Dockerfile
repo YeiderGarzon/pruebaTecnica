@@ -10,4 +10,4 @@ FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-Djava.net.preferIPv6Addresses=true","-jar","app.jar"]
+ENTRYPOINT ["java","-Djava.net.preferIPv4Stack=false","-Djava.net.preferIPv6Addresses=true","-jar","/app.jar"]
